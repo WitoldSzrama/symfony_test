@@ -21,7 +21,7 @@ class ProductController extends AbstractController
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted()){
+        if ($form->isSubmitted() && $form->isValid() ){
             $product = $form->getData();
             dump($product);
             $em->persist($product);
